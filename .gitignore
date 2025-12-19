@@ -1,0 +1,26 @@
+
+---
+
+## `.gitignore`
+
+```gitignore
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+.env
+
+# PyCharm / IntelliJ
+.idea/
+
+# OS
+.DS_Store
+
+# Node / frontend (if you later add tooling)
+node_modules/
+dist/
+build/
+.env

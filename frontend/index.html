@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="card">
+      <header class="header">
+        <h1>Shorten your links</h1>
+        <p>Paste a long URL — get a short one you can share.</p>
+      </header>
+
+      <form id="shorten-form" class="form">
+        <label class="label" for="url">Long URL</label>
+        <input
+          id="url"
+          name="url"
+          class="input"
+          type="url"
+          placeholder="https://example.com/some/very/long/link"
+          required
+        />
+        <button class="button" type="submit">Shorten</button>
+      </form>
+
+      <section class="result">
+        <div class="row">
+          <span class="muted">Status:</span>
+          <span id="status" class="status">Idle</span>
+        </div>
+
+        <div id="output" class="output hidden">
+          <div class="row">
+            <span class="muted">Short URL:</span>
+            <a id="short-url" href="#" target="_blank" rel="noreferrer"></a>
+          </div>
+          <div class="row">
+            <button id="copy" class="button secondary" type="button">Copy</button>
+          </div>
+        </div>
+
+        <p id="error" class="error hidden"></p>
+      </section>
+
+      <footer class="footer">
+        <small class="muted">
+          Tip: set your backend base URL inside <code>frontend/script.js</code>.
+        </small>
+      </footer>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
