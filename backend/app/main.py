@@ -30,7 +30,7 @@ else:
 
 @app.get("/health")
 def health() -> dict:
-    return {"ok": True}
+    return {"status": "ok"}
 
 
 @app.post("/shorten", response_model=ShortenResponse)
