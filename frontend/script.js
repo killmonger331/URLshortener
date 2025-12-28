@@ -1,6 +1,9 @@
 // IMPORTANT:
 // Set this to your Elastic Beanstalk backend base URL once deployed.
 // Example: "https://my-urlshortener-env.us-west-2.elasticbeanstalk.com"
+console.log("SCRIPT LOADED");
+console.log("BACKEND_BASE_URL =", BACKEND_BASE_URL);
+
 const BACKEND_BASE_URL = "https://api.richard-morales.com";
 
 const form = document.getElementById("shorten-form");
