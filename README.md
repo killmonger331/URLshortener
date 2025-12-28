@@ -3,7 +3,7 @@
 A full-stack URL shortener web application built with a Vercel-hosted frontend, a FastAPI backend deployed on AWS Elastic Beanstalk, and Redis for persistence.
 
 ## Live Demo
-Frontend: https://url-shortener-zeta.vercel.app
+Frontend: https://ur-lshortener-2tyie8x33-richards-projects-c0a9c9b4.vercel.app/
 Backend API: https://api.richard-morales.com
 
 ## Overview
