@@ -21,6 +21,11 @@ app.add_middleware(
     allow_headers=["Content-Type"],
 )
 
+@app.get("/debug-cors")
+def debug_cors():
+    return {"message": "CORS is working"}
+
+
 storage: Storage
 if settings.redis_url:
     storage = RedisStorage(settings.redis_url)
