@@ -23,17 +23,17 @@ This project allows uers to submit long URLs and receive shortened links that re
  Frontend:
  - HTML, CSS, JavaScript
  - Hosted on Vercel
- Backend:
+Backend:
  - Python
  - FastAPI
  - Uvicorn
- Infrastructure:
+Infrastructure:
  - Docker
  - AWS Elastic Beanstalk
  - AWS Application Load Balancer
  - AWS ACM (HTTPS / TLS)
  - Route 53 (Custom Domain)
- Storage
+Storage
  - Redis
 
 ## Features
