@@ -13,7 +13,7 @@ def _split_csv(value: str) -> List[str]:
 class Settings:
     allowed_origins: List[str]
     allowed_origin_regex: str | None
-    base_url: str
+    base_url: str | None
     redis_url: str | None
 
 
@@ -23,7 +23,9 @@ def get_settings() -> Settings:
     "https://ur-lshortener-zeta.vercel.app,https://ur-lshortener-git-main-richards-projects-c0a9c9b4.vercel.app,https://ur-lshortener-ma50ct7r6-richards-projects-c0a9c9b4.vercel.app,https://ur-lshortener-nr25t5yo5-richards-projects-c0a9c9b4.vercel.app,https://richard-morales.com"
 )
     allowed_origin_regex = os.getenv("ALLOWED_ORIGIN_REGEX")
-    base_url = os.getenv("BASE_URL", "http://localhost:8000").rstrip("/")
+    base_url = os.getenv("BASE_URL")
+    if base_url:
+        base_url = base_url.rstrip("/")
     redis_url = os.getenv("REDIS_URL")
 
     return Settings(

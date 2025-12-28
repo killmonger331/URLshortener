@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
 
@@ -39,7 +39,7 @@ def health() -> dict:
 
 
 @app.post("/shorten", response_model=ShortenResponse)
-def shorten(payload: ShortenRequest) -> ShortenResponse:
+def shorten(payload: ShortenRequest, request: Request) -> ShortenResponse:
     long_url = str(payload.url)
 
     # Create a code and ensure no collision
@@ -47,7 +47,8 @@ def shorten(payload: ShortenRequest) -> ShortenResponse:
         code = generate_code()
         if not storage.exists(code):
             storage.set(code, long_url)
-            short_url = f"{settings.base_url}/{code}"
+            base = settings.base_url or str(request.base_url).rstrip("/")
+            short_url = f"{base}/{code}"
             return ShortenResponse(code=code, short_url=short_url, long_url=long_url)
 
     raise HTTPException(status_code=500, detail="Could not generate a unique short code.")

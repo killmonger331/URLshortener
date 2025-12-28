@@ -6,8 +6,8 @@ services:
     ports:
       - "8000:8000"
     environment:
-      ALLOWED_ORIGINS: "http://localhost:3000"
-      BASE_URL: "http://localhost:8000"
+      ALLOWED_ORIGINS: "https://url-shortener-git-main-richards-projects-c0a9c9b4.vercel.app""
+      BASE_URL: "https://api.richard-morales.com"
       REDIS_URL: "redis://redis:6379/0"
     depends_on:
       - redis
