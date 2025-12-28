@@ -4,7 +4,9 @@ A full-stack URL shortener web application built with a Vercel-hosted frontend, 
 
 ## Live Demo
 Frontend: https://ur-lshortener-2tyie8x33-richards-projects-c0a9c9b4.vercel.app/
+
 Backend API: https://api.richard-morales.com/health
+
 Note: The backend is an API service and does not serve a web UI at the root path. 
 
 ## Overview
