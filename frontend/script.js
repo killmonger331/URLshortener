@@ -48,11 +48,11 @@ form.addEventListener("submit", async (e) => {
   try {
     setStatus("Shortening…");
 
-    const res = await fetch(`${https://api.richard-morales.com}/shorten`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ url: longUrl }),
-    });
+  const res = await fetch(`${BACKEND_BASE_URL}/shorten`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ url: longUrl }),
+  });
 
     if (!res.ok) {
       const text = await res.text();
