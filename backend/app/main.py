@@ -12,7 +12,7 @@ from .storage import InMemoryStorage, RedisStorage, Storage, generate_code
 settings = get_settings()
 
 app = FastAPI(title="URL Shortener API", version="1.0.0")
-
+print(app.user_middleware)
 app.add_middleware(
     CORSMiddleware,
     allow_origin_regex=r"https://.*\.vercel\.app",
