@@ -18,7 +18,32 @@ This project allows uers to submit long URLs and receive shortened links that re
 - Storage:
   - Default: in-memory (resets on restart)
   - Production: Redis (persistent storage)
- 
+  
+ ## Tech Stack
+ Frontend:
+ - HTML, CSS, JavaScript
+ - Hosted on Vercel
+ Backend:
+ - Python
+ - FastAPI
+ - Uvicorn
+ Infrastructure:
+ - Docker
+ - AWS Elastic Beanstalk
+ - AWS Application Load Balancer
+ - AWS ACM (HTTPS / TLS)
+ - Route 53 (Custom Domain)
+ Storage
+ - Redis
+
+## Features
+- URL shortening with unique short codes
+- Persistent storage using Redis
+- HTTPS-secured custom domain
+- CORS-protected API access
+- Dockerized backend for portability
+- Production deployment on AWS
+
 ## Production Deployment
 - Frontend: Vercel
 - Backend: FastAPI running on AWS Elastic Beanstalk (Docker)
@@ -33,5 +58,21 @@ The backend can be ran locally using Docker Compose for development and testing.
 ```bash
 cd ops/docker
 docker compose up --build
+```
+
+## What I Learned
+- How to containerize a FastAPI applciation with Docker
+- How environment variables differ between local and cloud environments
+- How to configure HTTPS using AWS ACM and Elastic Beanstalk
+- How DNS, load balancers, and TLS certificates work together
+- How to debug CORS and cross-origin issues in production
+- How to deploy and maintain a live backend independent of a local machine
+
+## Future Improvements 
+- Link expiration (TTL)
+- Click analytics per short URL
+- Rate limiting
+- Authentication
+- Database persistence (PostgreSQL)
 
 
