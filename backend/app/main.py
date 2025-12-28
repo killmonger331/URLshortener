@@ -15,11 +15,10 @@ app = FastAPI(title="URL Shortener API", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.allowed_origins if settings.allowed_origins else ["*"],
-    allow_origin_regex=settings.allowed_origin_regex,
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=False,
-    allow_methods=["GET", "POST", "OPTIONS"],
-    allow_headers=["*"],
+    allow_methods=["POST", "OPTIONS"],
+    allow_headers=["Content-Type"],
 )
 
 storage: Storage
